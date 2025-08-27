@@ -22,7 +22,7 @@ function Login() {
     console.log(userData)
  
     try {
-     fetch('http://localhost:5000/login', {
+     fetch('https://chatapplication-jxtt.onrender.com/login', {
          method: "POST",
          headers: {
              "Content-Type": "application/json"
