@@ -10,18 +10,18 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-  "cloudinary": "^2.5.0",                // Latest Cloudinary SDK
-  "cors": "^2.8.5",                      // Still stable, no update since 2017
-  "dotenv": "^16.4.5",                   // Latest dotenv
-  "express": "^4.21.1",                  // Express 4 is stable, Express 5 still beta
-  "fs": "0.0.1-security",                // Dummy, you can remove (Node already has fs built-in)
-  "http": "0.0.1-security",              // Dummy, remove (Node has http built-in)
-  "mongodb": "^6.10.0",                  // Latest stable MongoDB driver
-  "mongoose": "^8.8.0",                  // Latest Mongoose
-  "multer": "^1.4.5-lts.1",              // Latest stable multer
-  "multer-storage-cloudinary": "^4.0.0", // Latest
-  "path": "0.12.7",                      // Dummy, remove (Node has path built-in)
-  "socket.io": "^4.8.1",                 // Latest stable socket.io
-  "url": "0.11.4"                        // Dummy, remove (Node has URL built-in)
+  "cloudinary": "^2.5.0",                
+  "cors": "^2.8.5",                     
+  "dotenv": "^16.4.5",                  
+  "express": "^4.21.1",                  
+  "fs": "0.0.1-security",                
+  "http": "0.0.1-security",              
+  "mongodb": "^6.10.0",                 
+  "mongoose": "^8.8.0",                  
+  "multer": "^1.4.5-lts.1",             
+  "multer-storage-cloudinary": "^4.0.0", 
+  "path": "0.12.7",                      
+  "socket.io": "^4.8.1",                
+  "url": "0.11.4"                        
 }
 }
