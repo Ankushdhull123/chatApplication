@@ -1,0 +1,47 @@
+.invitebox{
+    min-height: 50px;
+    position: fixed;
+    width: 400px;
+    height: auto;
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 5px;
+   
+    align-self: flex-end;
+    z-index: 1;
+    background-color: white;
+}
+
+
+.singleinvitecontact{
+    height: auto;
+    padding: 5px;
+    width: 90%;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0.1px solid #ddd;
+}
+
+.singleinvitecontact .imgandname{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+ 
+}
+
+
+.invitebtn{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.singleinvitecontact img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+

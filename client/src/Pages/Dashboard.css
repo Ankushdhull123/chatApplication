@@ -1,0 +1,98 @@
+.dash{
+    height: 100%;
+    width: 75%;
+    border: 0.1px solid #ddd;
+   
+}
+
+.dash .profileandlogout{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.dash .userprofile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+
+}
+
+.dash .profileandlogout .logout{
+    height: 100%;
+    width: 50%;
+   
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.dash .profileandlogout .logout button{
+    align-self: right;
+     margin: 20px 20px;
+    height: 35px;
+    width: 120px;
+}
+
+.dash .userprofile label{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.dash .userprofile label img{
+    height: 90%;
+    width: 50%;
+    border-radius: 50%;
+}
+
+.dash .aboutuserdetails{
+    height: 40%;
+    width: 100%;
+   
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    flex-direction: column;
+}
+
+.dash .aboutuserdetails .email{
+    height: 50px;
+    width: 90%;
+  
+}
+
+
+
+@media (max-width:480px) {
+    .dash{
+        width: 90%;
+        border: none;
+    }
+    
+.dash .profileandlogout{
+    height: 30%;
+}
+
+
+.dash .userprofile{
+    
+    
+    width: 100%;
+
+}
+
+.dash .userprofile label img{
+    width: 90%;
+ 
+}
+}
