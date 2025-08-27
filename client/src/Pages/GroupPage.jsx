@@ -55,7 +55,7 @@ function GroupPage() {
 
   // Save to DB
   try {
-    await fetch("http://localhost:5000/addgrpmessage", {
+    await fetch("https://chatapplication-jxtt.onrender.com/addgrpmessage", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(obj),
@@ -91,7 +91,7 @@ function GroupPage() {
 
     async function addtogroup(name) {
   try {
-    const res = await fetch("http://localhost:5000/addmembertogroup", {
+    const res = await fetch("https://chatapplication-jxtt.onrender.com/addmembertogroup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
