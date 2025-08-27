@@ -32,7 +32,7 @@ function GroupPage() {
   if (!groupid) return; // safety check
 
   // Fetch messages when group opens
-  fetch(`http://localhost:5000/groupmessages/${groupid}`)
+  fetch(`https://chatapplication-jxtt.onrender.com/groupmessages/${groupid}`)
     .then(res => res.json())   // ✅ parse JSON
     .then(data => {
       setallchats(data);       // store in state
