@@ -31,7 +31,7 @@ function Contacts() {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/finduser/${searchtext}`);
+        const res = await fetch(`https://chatapplication-jxtt.onrender.com/finduser/${searchtext}`);
         const data = await res.json();
         setaddfriendarray(data)
       } catch (error) {
@@ -84,7 +84,7 @@ function Contacts() {
     if (!groupname) return;
 
     try {
-      const res = await fetch("http://localhost:5000/groups", {
+      const res = await fetch("https://chatapplication-jxtt.onrender.com/groups", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -114,7 +114,7 @@ function Contacts() {
   useEffect(() => {
     const fetchGroups = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/groups/${logindata.name}`);
+        const res = await fetch(`https://chatapplication-jxtt.onrender.com/groups/${logindata.name}`);
         const data = await res.json();
         if (data.success) {
           setallgroups(data.groups);
