@@ -32,7 +32,7 @@ const Signup = () => {
     data.append("img", formData.img);
 
     try {
-      const response = await axios.post("http://localhost:5000/register", data, {
+      const response = await axios.post("https://chatapplication-jxtt.onrender.com/register", data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       console.log(response.data);
