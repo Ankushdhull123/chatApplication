@@ -39,7 +39,7 @@ export const MyProvider = ({ children }) => {
     },[])
 
     useEffect(()=>{
-      var x= io('http://localhost:5000');
+      var x= io('https://chatapplication-jxtt.onrender.com');
 
       if(logindata.name!==null)
       {
