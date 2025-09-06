@@ -59,7 +59,7 @@ function Chat() {
   useEffect(() => {
   const fetchChats = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/allchats/${conersationid}`);
+      const res = await fetch(`https://chatapplication-t6e6.onrender.com/allchats/${conersationid}`);
       const data = await res.json();
       setallchats(data);  // Make sure setallchats is defined in your component
     } catch (error) {
@@ -136,7 +136,7 @@ const seconds = diff / 1000;
     socket.emit('sendprivatemsg',obj)
 
     try {
-    fetch('http://localhost:5000/message', {
+    fetch('https://chatapplication-t6e6.onrender.com/message', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
