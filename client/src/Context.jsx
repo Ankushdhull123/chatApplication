@@ -39,7 +39,7 @@ export const MyProvider = ({ children }) => {
     },[])
 
     useEffect(()=>{
-      var x= io('http://localhost:5000');
+      var x= io('https://chatapplication-t6e6.onrender.com');
 
       if(logindata.name!==null)
       {
@@ -64,7 +64,7 @@ export const MyProvider = ({ children }) => {
     useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch('http://localhost:5000/allusers');
+        const res = await fetch('https://chatapplication-t6e6.onrender.com/allusers');
         const data = await res.json(); // convert response to JSON
         setContacts(data); // store the contacts in state
         console.log('contacts',data)
@@ -79,7 +79,7 @@ export const MyProvider = ({ children }) => {
  useEffect(() => {
   const fetchFollowings = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/user/${logindata.id}/followings`);
+      const res = await fetch(`https://chatapplication-t6e6.onrender.com/user/${logindata.id}/followings`);
       if (!res.ok) {
         throw new Error("Failed to fetch followings");
       }
