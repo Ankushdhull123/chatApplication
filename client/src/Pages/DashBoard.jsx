@@ -26,7 +26,7 @@ function DashBoard() {
   formData.append("profilePic", file);
 
   try {
-    const res = await fetch(`http://localhost:5000/upload-profile/${logindata.name}`, {
+    const res = await fetch(`https://chatapplication-t6e6.onrender.com/upload-profile/${logindata.name}`, {
       method: "POST",
       body: formData
     });
