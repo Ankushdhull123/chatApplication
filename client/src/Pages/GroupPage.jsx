@@ -32,7 +32,7 @@ function GroupPage() {
   if (!groupid) return; // safety check
 
   // Fetch messages when group opens
-  fetch(`http://localhost:5000/groupmessages/${groupid}`)
+  fetch(`https://chatapplication-t6e6.onrender.com/groupmessages/${groupid}`)
     .then(res => res.json())   // ✅ parse JSON
     .then(data => {
       setallchats(data);       // store in state
@@ -55,7 +55,7 @@ function GroupPage() {
 
   // Save to DB
   try {
-    await fetch("http://localhost:5000/addgrpmessage", {
+    await fetch("https://chatapplication-t6e6.onrender.com/addgrpmessage", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(obj),
@@ -91,7 +91,7 @@ function GroupPage() {
 
     async function addtogroup(name) {
   try {
-    const res = await fetch("http://localhost:5000/addmembertogroup", {
+    const res = await fetch("https://chatapplication-t6e6.onrender.com/addmembertogroup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
