@@ -16,7 +16,7 @@ function AvailableRooms() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:5000/allrooms");
+        const res = await fetch("https://chatapplication-t6e6.onrender.com/allrooms");
         const data = await res.json();
         setallrooms(data)
       } catch (error) {
@@ -36,7 +36,7 @@ function AvailableRooms() {
   
 
   try {
-    const res = await fetch("http://localhost:5000/groups", {
+    const res = await fetch("https://chatapplication-t6e6.onrender.com/groups", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
