@@ -8,5 +8,7 @@ import group from './group.png'
 import room from './room.png'
 import groupimg from './groupimg.jpg'
 import back from './back.png'
+import close from './close.png'
+import send from './send.png'
 
-export const images = {noprofile,addfriend,notification,messenger,useronline,chatbackground,group,room,groupimg,back}
+export const images = {noprofile,addfriend,notification,messenger,useronline,chatbackground,group,room,groupimg,back,close,send}

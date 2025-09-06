@@ -1,8 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 import './Signup.css'
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Signup = () => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -36,7 +39,15 @@ const Signup = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
       console.log(response.data);
-      alert("User registered successfully!");
+
+        toast.success('User registered successfully!')
+      setTimeout(()=>{
+
+        navigate('/login')
+        
+
+      },1500)
+      
     } catch (error) {
       console.error(error);
       alert("Error registering user.");
@@ -45,14 +56,20 @@ const Signup = () => {
 
   return (
     <form className="signup-form" onSubmit={handleSubmit} encType="multipart/form-data">
-      <input type="text" name="name" placeholder="Name" onChange={handleChange} required />
-      <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-      <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-      <input type="tel" name="phone" placeholder="Phone" onChange={handleChange} required />
-      <textarea name="description" placeholder="Description" onChange={handleChange} required />
-      <input type="file" name="img" onChange={handleFileChange} accept="image/*" />
-      <button type="submit">Register</button>
-    </form>
+  <input type="text" name="name" placeholder="Name" onChange={handleChange} required />
+  <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
+  <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+  <input type="tel" name="phone" placeholder="Phone" onChange={handleChange} required />
+  <textarea name="description" placeholder="Description" onChange={handleChange} required />
+  <input type="file" name="img" onChange={handleFileChange} accept="image/*" />
+
+  <button type="submit">Register</button>
+
+  <p className="login-text">
+    Already a user? <a onClick={()=> navigate('/login')}>Login</a>
+  </p>
+</form>
+
   );
 };
 

@@ -5,13 +5,16 @@ import { MyContext } from '../Context'
 import { useNavigate } from 'react-router-dom'
 
 function DashBoard() {
-  const {logindata} = useContext(MyContext)
-  const [profilePic, setProfilePic] = useState(images.noprofile); // default image
+  const {logindata,setlogindata} = useContext(MyContext)
+  const [profilePic, setProfilePic,] = useState(images.noprofile);
+
+  
 
   const nav = useNavigate()
   function logout()
   {
     localStorage.removeItem('userdata')
+    setlogindata({name:null,phone:null,email:null,desc:null,id:null})
     nav('/')
   }
 
@@ -30,9 +33,9 @@ function DashBoard() {
 
     const data = await res.json();
     if (data.success) {
-      setProfilePic(data.user.img); // updated profile image
-      // optional: also update localStorage user info
-      localStorage.setItem("userdata", JSON.stringify(data.user));
+     setProfilePic(data.user.img);
+  setlogindata(data.user); // update context directly
+  localStorage.setItem("userdata", JSON.stringify(data.user));
     }
   } catch (err) {
     console.error("Upload failed:", err);
@@ -43,7 +46,7 @@ function DashBoard() {
       <div className="profileandlogout">
         <div className="userprofile">
           <label htmlFor="fileInput">
-            <img src={logindata.img} alt="profile" style={{ cursor: "pointer" }} />
+            <img src={logindata.img===null? images.noprofile : logindata.img} alt="profile" style={{ cursor: "pointer" }} />
           </label>
           <input
             id="fileInput"
@@ -60,13 +63,13 @@ function DashBoard() {
       </div>
       <div className="aboutuserdetails">
       <div className="email">
-         <p>{logindata.email}</p>
+         <p>EMAIL: {logindata.email}</p>
       </div>
       <div className="email">
-        <p>{logindata.phone}</p>
+        <p>PHONE: {logindata.phone}</p>
       </div>
       <div className="email">
-        <p>{logindata.desc}</p>
+        <p>DESCRIPTION: {logindata.desc}</p>
       </div>
        
         

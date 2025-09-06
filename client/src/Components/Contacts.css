@@ -134,8 +134,33 @@
 @media (max-width:480px) {
     .contacts{
     
-    width: 90%;
+    width: 100%;
     border: none;
 
+
+
+}
+
+.contacts .searchcontactandadd .inputforcontactsearch input{
+   
+    width: 100%;
+    
+}
+
+.contacts .searchcontactandadd{
+ 
+    width: 90%;
+   
+}
+
+.allgroups{
+   
+    width: 100%;
+   
+}
+
+.contacts .allcontacts{
+   
+    width: 100%;
 }
 }

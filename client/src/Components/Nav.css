@@ -1,14 +1,12 @@
 .nav{
     height: 8vh;
-    width: 100%;
-    background-color: rgb(125, 214, 125);
-    
+    width: 90%;
     color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 0.1px solid #CCCCCC;
-    
+    padding: 0px 20px;
 }
 
 .nav .logo{
@@ -27,8 +25,8 @@
 
 .nav .profileandnotification{
     height: 100%;
-    width: 15%;
-    
+    width: auto;
+     gap: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,8 +35,9 @@
 
 
 .nav .profileandnotification img{
-    height: 20px;
-    width: 20px;
+    height: 35px;
+    width: 35px;
+    margin-top: 5px;
 }
 
 
@@ -48,9 +47,17 @@
     }
 
     .nav .profileandnotification{
-   
-    width: 75%;
-   
+        display: flex;
+        gap: 10px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.nav .right{
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    gap: 5px;
 }
 
 }

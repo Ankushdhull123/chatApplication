@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function AvailableRooms() {
   const [rooms, setRooms] = useState([]);
   const [search, setSearch] = useState("");
-  const [newRoom, setNewRoom] = useState("");
+  const [roomname,setrommname] = useState('')
   const [allrooms,setallrooms] = useState([])
 
   const navigate = useNavigate()
@@ -29,15 +29,18 @@ function AvailableRooms() {
 
   // Handle creating new room
   async function createroom() {
+    
 
-  if (!newRoom) return;
+  //if (!roomname) return;
+
+  
 
   try {
     const res = await fetch("http://localhost:5000/groups", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        groupName: newRoom,
+        groupName: roomname,
         createdBy: logindata.name,
         members: [logindata.name], // admin is also a member
         groupImage: null,
@@ -79,10 +82,10 @@ function AvailableRooms() {
         <input
           type="text"
           placeholder="Enter new room name"
-          value={newRoom}
-          onChange={(e) => setNewRoom(e.target.value)}
+          value={roomname}
+          onChange={(e) => setrommname(e.target.value)}
         />
-        <button onClick={createroom}>Create Room</button>
+        <button onClick={()=>createroom()}>Create Room</button>
       </div>
 
       {/* Show all rooms */}

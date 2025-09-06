@@ -49,3 +49,13 @@
 .room-item:hover {
   background: #e0e0e0;
 }
+
+
+@media (max-width:480px) {
+  .roomlandingpage {
+  
+    width: 85%;
+    
+    border: none;
+}
+}

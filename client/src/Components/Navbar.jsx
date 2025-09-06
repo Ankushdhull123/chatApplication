@@ -49,27 +49,28 @@ const Nav = () => {
       </div>
       {
         !logindata.name ? (<div className="right">
-       <p onClick={()=> navigate('/login')}>Login</p>
+       
 
-       <p onClick={()=> navigate('/signup')}>Sign Up</p>
+       <button style={{height:'32px',width:'100px',backgroundColor:'green',color:'white',border:'none',borderRadius:'5px'}}onClick={()=> navigate('/signup')}>Register</button>
 
       </div>) : ''
       }
       {
          logindata.name ? (<div className='profileandnotification'>
           <div className='room'>
-            <img src={images.room} alt='room' onClick={()=> navigate('/allrooms')}/>
+            <img src={images.room} alt='room' onClick={()=> {
+              screensize < 480 && showcontacts ? setshowcontacts(false): setshowcontacts(true)
+              navigate('/allrooms')}}/>
           </div>
-          <div className="notificationbox">
-            <img src={images.notification} alt='notification' onClick={()=> navigate('/notification')}/>
-          </div>
+          
           <div className="userprofile">
-            <p onClick={()=> {
+            <button style={{height:'32px',width:'auto',backgroundColor:'green',color:'white',border:'none',borderRadius:'5px'}}onClick={()=> {
               if(showcontacts && screensize<480) 
               {
                 setshowcontacts(false)
               }
-              navigate('/dash')}}>Hello {logindata.name}</p>
+
+              navigate('/dash')}}>Hello {logindata.name}</button>
           </div>
 
           

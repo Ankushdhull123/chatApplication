@@ -121,13 +121,16 @@ function GroupPage() {
                 screensize < 480 ? <img src={images.back} alt='back' style={{height:'25px',width:'25px'}} onClick={()=> setshowcontacts(true)}/> : ''
               }
 
-              <img src={profile==="" ? images.noprofile : profile} alt='profile'/>
+              <img src={profile===null ? images.noprofile : profile} alt='profile'/>
               <p>{name}</p>
               {
                 createdBy === logindata.name ?  <button onClick={()=> setshowinvitebox(true)}>invite</button> : ''
               }
+              {
+                screensize < 480 ? '' : <p>{members.length}</p>
+              }
              
-              <p>{members.length} Members</p>
+              
               
             </div>
             
@@ -149,10 +152,11 @@ function GroupPage() {
             return(<div className={i.sender===logindata.name ? 'sendermsg' : 'receivermsg'} key={index}>
                 <div className="msgdp" style={{display: i.sender!==logindata.name ? 'flex':'none'}}>
                   {
-                    i.sender!==logindata.name ? <img src={i.senderimg}alt='dp'/> : ''
+                    i.sender!==logindata.name ? <img src={i.senderimg===null? images.noprofile : i.senderimg}alt='dp'/> : ''
                 }
                 </div>
                 <div className="insidemsg">
+
                   <p>{i.message} <span style={{color:'grey',fontSize:'12px',fontStyle:'italic',marginLeft:'5px'}}>{time}</span></p>
                  
                 </div>
@@ -164,9 +168,8 @@ function GroupPage() {
             {
   showinvitebox ? (
     <div className="invitebox">
-      <button onClick={() => setshowinvitebox(false)} style={{ alignSelf: 'flex-start' }}>
-        Close
-      </button>
+      <img src={images.close} onClick={() => setshowinvitebox(false)} style={{ alignSelf: 'flex-start',height:'20px',width:'20px',margin:'5px 5px' }}  />
+        
       {contacts.map((i, index) =>
         members.includes(i.name) ? null : (
           <div
@@ -189,7 +192,7 @@ function GroupPage() {
             <div className="invitebtn">
               <button
                 onClick={(e) => {
-                  e.stopPropagation(); // ✅ prevent parent onClick
+                  e.stopPropagation(); 
                   addtogroup(i.name);
                 }}
               >
@@ -209,7 +212,7 @@ function GroupPage() {
           <div className="chatinput">
              <input type='text' placeholder='Send Message' value={message} onChange={(e)=>setmessage(e.target.value)}
                />
-             <button onClick={() => sendMessage()}>Send</button>
+             <img src={images.send}onClick={()=> sendMessage()}/>
           </div>
         </div>
   )

@@ -2,7 +2,6 @@
     height: 100%;
     width: 75%;
     border: 0.1px solid #ddd;
-   
 }
 
 .dash .profileandlogout{
@@ -11,8 +10,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    
 }
 
 .dash .userprofile{
@@ -21,14 +18,11 @@
     align-items: center;
     height: 100%;
     width: 50%;
-
 }
 
 .dash .profileandlogout .logout{
     height: 100%;
     width: 50%;
-   
-    
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
@@ -42,7 +36,6 @@
 }
 
 .dash .userprofile label{
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +51,6 @@
 .dash .aboutuserdetails{
     height: 40%;
     width: 100%;
-   
     display: flex;
     justify-content: flex-start;
     align-items:center;
@@ -68,10 +60,7 @@
 .dash .aboutuserdetails .email{
     height: 50px;
     width: 90%;
-  
 }
-
-
 
 @media (max-width:480px) {
     .dash{
@@ -80,19 +69,21 @@
     }
     
 .dash .profileandlogout{
-    height: 30%;
+    height: 35%;
+}
+
+
+.dash p{
+    font-size: 13px;
 }
 
 
 .dash .userprofile{
-    
-    
     width: 100%;
-
+    object-fit: contain;
 }
 
 .dash .userprofile label img{
-    width: 90%;
- 
+    width: 100%;
 }
 }

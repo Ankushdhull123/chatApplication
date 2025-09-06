@@ -71,7 +71,7 @@ app.post("/login", async (req, res) => {
     const user = await User.findOne({ email, password });
     if (!user) return res.status(400).json("Invalid credentials");
 
-    res.status(200).json({ message: "Login successful", name: user.name,phone:user.phone,email:user.email,description:user.description,id:user._id });
+    res.status(200).json({ message: "Login successfull", name: user.name,phone:user.phone,email:user.email,description:user.description,id:user._id,img:user.img });
   } catch (error) {
     console.error(error);
     res.status(500).json("Server error");

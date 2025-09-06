@@ -6,7 +6,7 @@ export const MyContext = createContext();
 // 2. Create the provider component
 export const MyProvider = ({ children }) => {
   
-    const [logindata,setlogindata] = useState({name:null,phone:null,email:null,desc:null,id:null})
+    const [logindata,setlogindata] = useState({name:null,phone:null,email:null,desc:null,id:null,img:null})
     const [socket,setsocket] = useState(null)
     const [contacts,setContacts] = useState([])
     const [showcontacts,setshowcontacts] = useState(true)
@@ -32,7 +32,7 @@ export const MyProvider = ({ children }) => {
         {
             setlogindata(x)
         }else{
-            setlogindata({name:null,phone:null,email:null,desc:null,id:null})
+            setlogindata({name:null,phone:null,email:null,desc:null,id:null,img:null})
             setshowcontacts(false)
         }
 
@@ -54,11 +54,11 @@ export const MyProvider = ({ children }) => {
     },[logindata.name])
     console.log('socket',socket)
 
-    function ManageLogindata(name,phone,email,desc,id)
+    function ManageLogindata(name,phone,email,desc,id,img)
     {
-        setlogindata({name:name,phone:phone,email:email,desc:desc,id:id})
+        setlogindata({name:name,phone:phone,email:email,desc:desc,id:id,img:img})
 
-        localStorage.setItem('userdata',JSON.stringify({name:name,phone:phone,email:email,desc:desc,id:id}))
+        localStorage.setItem('userdata',JSON.stringify({name:name,phone:phone,email:email,desc:desc,id:id,img:img}))
     }
 
     useEffect(() => {

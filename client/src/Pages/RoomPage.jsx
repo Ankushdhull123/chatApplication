@@ -9,7 +9,7 @@ function RoomPage() {
     const location = useLocation();
     const [showinvitebox,setshowinvitebox] = useState(false)
     const [message,setmessage] = useState('')
-    const {logindata,socket,contacts} = useContext(MyContext)
+    const {logindata,socket,contacts,screensize} = useContext(MyContext)
     const { groupid,name, profile,members ,createdBy} = location.state || {};
     console.log('members',members)
     const [allchats,setallchats] = useState([])
@@ -104,8 +104,12 @@ useEffect(()=>{
               {
                 createdBy === logindata.name ?  <button onClick={()=> setshowinvitebox(true)}>invite</button> : ''
               }
+
+              {
+                screensize < 480 ? '' : <p>{createdBy}'s Room</p>
+              }
              
-              <p>{createdBy}'s Room</p>
+              
               
             </div>
             
@@ -127,7 +131,7 @@ useEffect(()=>{
             return(<div className={i.sender===logindata.name ? 'sendermsg' : 'receivermsg'} key={index}>
                 <div className="msgdp" style={{display: i.sender!==logindata.name ? 'flex':'none'}}>
                   {
-                    i.sender!==logindata.name ? <img src={i.senderimg}alt='dp'/> : ''
+                    i.sender!==logindata.name ? <img src={i.senderimg===null ? images.noprofile : i.senderimg}alt='dp'/> : ''
                 }
                 </div>
                 <div className="insidemsg">
@@ -190,7 +194,7 @@ useEffect(()=>{
           <div className="chatinput">
              <input type='text' placeholder='Send Message' value={message} onChange={(e)=>setmessage(e.target.value)}
                />
-             <button onClick={() => sendMessage()}>Send</button>
+             <img src={images.send}onClick={()=> sendMessage()}/>
           </div>
         </div>
   )

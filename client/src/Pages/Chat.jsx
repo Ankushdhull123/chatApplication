@@ -203,7 +203,7 @@ const seconds = diff / 1000;
             return(<div className={i.sender===logindata.name ? 'sendermsg' : 'receivermsg'} key={index}>
                 <div className="msgdp" style={{display: i.sender!==logindata.name ? 'flex':'none'}}>
                   
-                    <img src={profile}alt='dp'/>
+                    <img src={profile===null ? images.noprofile : profile}alt='dp'/>
                 
                 </div>
                 <div className="insidemsg">
@@ -220,7 +220,7 @@ const seconds = diff / 1000;
           typing ? <div className={'receivermsg'}>
                 <div className="msgdp" style={{display:'flex'}}>
                   
-                    <img src={profile}alt='dp'/>
+                    <img src={profile===null ? images.noprofile : profile}alt='dp'/>
                 
 
 
@@ -236,14 +236,14 @@ const seconds = diff / 1000;
 
       </div>
       <div className="chatinput">
-         <input type='text' placeholder='Send Message' onChange={(x)=> {socket.emit('sender-typing',{convid:conersationid,sender:logindata.name,receiver:receiver})
+         <input type='text' placeholder='Send Message' onChange={(x)=> {
           setmessage(x.target.value)}} value={message}  onKeyUp={(e) => {
     if (e.key === 'Enter') {
       sendMessage()
 
     }
   }} />
-         <button onClick={()=> sendMessage()}>Send</button>
+         <img src={images.send}onClick={()=> sendMessage()}/>
       </div>
     </div>
   )

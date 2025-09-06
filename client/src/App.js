@@ -14,6 +14,7 @@ import { MyContext } from './Context';
 import GroupPage from './Pages/GroupPage';
 import AvailableRooms from './Pages/AvailableRooms';
 import RoomPage from './Pages/RoomPage';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const {logindata,showcontacts} = useContext(MyContext)
@@ -33,8 +34,13 @@ function App() {
         }, []);
   return (
     <div className='app'>
+      
+      
       <Nav/>
+      
       <div className='container'>
+        <ToastContainer />
+        
         {
                logindata.name !==null && showcontacts? <Contacts/> : ''
         }

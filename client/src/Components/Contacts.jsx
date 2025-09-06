@@ -4,10 +4,11 @@ import { useContext, useEffect, useState } from 'react'
 import { images } from '../Assets/Images'
 import { MyContext } from '../Context'
 import Nav from './Navbar'
+import {toast} from 'react-toastify'
 
 function Contacts() {
   const navigate = useNavigate()
-  const { contacts, socket, logindata, showcontacts, setshowcontacts } = useContext(MyContext)
+  const { contacts, socket, logindata, showcontacts, setshowcontacts,setContacts } = useContext(MyContext)
   const [showaddfriend, setshowaddfriend] = useState(false)
   const [searchtext, setsearchtext] = useState('')
   const [allgroups, setallgroups] = useState([])
@@ -29,19 +30,12 @@ function Contacts() {
 
 
   useEffect(() => {
-    const fetchdata = async () => {
-      try {
-        const res = await fetch(`http://localhost:5000/finduser/${searchtext}`);
-        const data = await res.json();
-        setaddfriendarray(data)
-      } catch (error) {
-        console.error("Failed to fetch chats:", error);
-      }
-    };
+       var filtered = contacts.filter((i) => 
+  i.name.toLowerCase().includes(searchtext.toLowerCase()))
 
-    if (searchtext !== null) {
-      fetchdata();
-    }
+
+       setContacts(filtered)
+
   }, [searchtext]);
 
   const toggleshowaddfriend = () => {
@@ -132,8 +126,11 @@ function Contacts() {
       <div className="searchcontactandadd">
         <div className="headingandfilter">
           <h3>Chats</h3>
-          <img src={images.group} alt='group' onClick={() => creategroup()} />
-          <img src={images.addfriend} alt='addfriend' onClick={() => toggleshowaddfriend()} />
+          <div style={{display:'flex',gap:'15px'}}>
+            <img src={images.group} alt='group' onClick={() => creategroup()} />
+          <img src={images.addfriend} alt='addfriend' onClick={() => toast('Adding Friends Feature Coming soon')} />
+          </div>
+          
 
         </div>
         <div className="inputforcontactsearch">
