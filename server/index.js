@@ -41,7 +41,7 @@ const app = express();
 
 // Set up CORS
 app.use(cors({
-  origin: "http://localhost:3000", // Allow your frontend's origin
+  origin: "https://chatapplication-nu.vercel.app", // Allow your frontend's origin
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }));
