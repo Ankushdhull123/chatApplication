@@ -56,7 +56,7 @@ function RoomPage() {
 
     async function addtogroup(name) {
   try {
-    const res = await fetch("http://localhost:5000/addmembertogroup", {
+    const res = await fetch("https://chatapplication-t6e6.onrender.com/addmembertogroup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
